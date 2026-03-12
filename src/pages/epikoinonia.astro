@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Επικοινωνία" description="Επικοινωνήστε μαζί μας για δωρεάν εκτίμηση. Τηλέφωνο, email ή φόρμα επικοινωνίας. Αυθημερόν εξυπηρέτηση.">
+  <section class="section" style="background: linear-gradient(135deg, var(--color-bg), var(--color-surface-2))">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <span class="section-label">Επικοινωνία</span>
+          <h1 style="font-size: var(--text-2xl); font-weight: 800; margin-bottom: var(--space-4)">Είμαστε εδώ για εσάς</h1>
+          <p style="font-size: var(--text-lg); color: var(--color-text-muted); line-height: 1.7; margin-bottom: var(--space-8)">
+            Καλέστε μας, στείλτε email ή συμπληρώστε τη φόρμα. Απαντάμε εντός 30 λεπτών.
+          </p>
+
+          <div class="contact-methods">
+            <a href="tel:+302101234567" class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <p class="contact-method-label">Τηλέφωνο</p>
+                <p class="contact-method-value">210 123 4567</p>
+              </div>
+            </a>
+            <a href="mailto:info@biocleanpro.gr" class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
+              </div>
+              <div>
+                <p class="contact-method-label">Email</p>
+                <p class="contact-method-value">info@biocleanpro.gr</p>
+              </div>
+            </a>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <p class="contact-method-label">Διεύθυνση</p>
+                <p class="contact-method-value">Πειραιάς, Αττική</p>
+              </div>
+            </div>
+            <div class="contact-method">
+              <div class="contact-method-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              </div>
+              <div>
+                <p class="contact-method-label">Ωράριο</p>
+                <p class="contact-method-value">Δευ-Κυρ: 07:00 - 22:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-wrapper">
+          <form class="contact-form" action="#" method="post">
+            <h2 style="font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-6)">Ζητήστε Δωρεάν Εκτίμηση</h2>
+            <div class="form-row">
+              <div class="form-group"><input type="text" name="name" placeholder="Ονοματεπώνυμο *" required class="form-input" /></div>
+              <div class="form-group"><input type="tel" name="phone" placeholder="Τηλέφωνο *" required class="form-input" /></div>
+            </div>
+            <div class="form-group"><input type="email" name="email" placeholder="Email" class="form-input" /></div>
+            <div class="form-group">
+              <select name="service" required class="form-input">
+                <option value="" disabled selected>Επιλέξτε Υπηρεσία *</option>
+                <option value="apentomoseis">Απεντομώσεις</option>
+                <option value="apolymansis">Απολυμάνσεις</option>
+                <option value="myoktonies">Μυοκτονίες</option>
+                <option value="viologikoi">Βιολογικοί Καθαρισμοί</option>
+                <option value="katsarides">Καταπολέμηση Κατσαρίδων</option>
+                <option value="korioi">Καταπολέμηση Κοριών</option>
+                <option value="pontikia">Καταπολέμηση Ποντικιών</option>
+                <option value="other">Άλλο</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <select name="area" class="form-input">
+                <option value="" disabled selected>Περιοχή</option>
+                <option value="peiraias">Πειραιάς</option>
+                <option value="nikaia">Νίκαια</option>
+                <option value="korydallos">Κορυδαλλός</option>
+                <option value="keratsini">Κερατσίνι</option>
+                <option value="aigaleo">Αιγάλεω</option>
+                <option value="perama">Πέραμα</option>
+                <option value="other">Άλλη</option>
+              </select>
+            </div>
+            <div class="form-group"><textarea name="message" placeholder="Περιγράψτε το πρόβλημα..." rows="4" class="form-input"></textarea></div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%">Αποστολή Αιτήματος</button>
+            <p style="font-size: var(--text-xs); color: var(--color-text-faint); text-align: center; margin-top: var(--space-3)">Θα σας απαντήσουμε εντός 30 λεπτών</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .contact-grid { display: grid; grid-template-columns: 1fr; gap: var(--space-12); align-items: start; }
+  @media (min-width: 1024px) { .contact-grid { grid-template-columns: 1fr 1fr; } }
+  .contact-methods { display: flex; flex-direction: column; gap: var(--space-4); }
+  .contact-method {
+    display: flex; align-items: center; gap: var(--space-4);
+    padding: var(--space-4); background: var(--color-surface); border: 1px solid var(--color-divider);
+    border-radius: var(--radius-lg); transition: all var(--transition-fast);
+  }
+  .contact-method:hover { border-color: var(--color-primary); }
+  .contact-method-icon {
+    width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;
+    background: var(--color-primary-light); color: var(--color-primary); border-radius: var(--radius-lg); flex-shrink: 0;
+  }
+  .contact-method-label { font-size: var(--text-xs); color: var(--color-text-faint); }
+  .contact-method-value { font-weight: 600; }
+  .contact-form-wrapper {
+    background: var(--color-surface); border: 1px solid var(--color-divider);
+    border-radius: var(--radius-xl); padding: var(--space-8); box-shadow: var(--shadow-lg);
+  }
+  .contact-form { display: flex; flex-direction: column; gap: var(--space-4); }
+  .form-row { display: grid; grid-template-columns: 1fr; gap: var(--space-4); }
+  @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+  .form-input {
+    width: 100%; padding: var(--space-3) var(--space-4); font-size: var(--text-sm);
+    background: var(--color-surface-2); border: 1.5px solid var(--color-divider);
+    border-radius: var(--radius-lg); color: var(--color-text); transition: border-color var(--transition-fast);
+  }
+  .form-input:focus { outline: none; border-color: var(--color-primary); box-shadow: 0 0 0 3px var(--color-primary-light); }
+  .form-input::placeholder { color: var(--color-text-faint); }
+  textarea.form-input { resize: vertical; }
+  select.form-input { appearance: none; cursor: pointer; }
+</style>

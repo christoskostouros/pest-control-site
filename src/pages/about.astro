@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const values = [
+  { title: 'Επιστημονική Προσέγγιση', desc: 'Κάθε επέμβαση βασίζεται σε τεκμηριωμένα πρωτόκολλα και σύγχρονη εντομολογική γνώση.' },
+  { title: 'Οικολογική Συνείδηση', desc: 'Χρησιμοποιούμε σκευάσματα χαμηλής τοξικότητας, βιοδιασπώμενα και φιλικά στο περιβάλλον.' },
+  { title: 'Εγγύηση Αποτελέσματος', desc: 'Δωρεάν επανάληψη αν το πρόβλημα επιμείνει εντός της περιόδου εγγύησης.' },
+  { title: 'Διαφάνεια', desc: 'Αναλυτική ενημέρωση πριν, κατά τη διάρκεια και μετά από κάθε επέμβαση.' },
+];
+
+const certifications = [
+  'Πιστοποιημένοι από τον Εθνικό Οργανισμό Φαρμάκων (ΕΟΦ)',
+  'Εγκεκριμένα βιοκτόνα προϊόντα κατά κανονισμό ΕΕ 528/2012',
+  'Ασφάλιση αστικής ευθύνης',
+  'Συνεχής εκπαίδευση τεχνικών σε νέες μεθόδους',
+];
+---
+<BaseLayout title="Σχετικά με εμάς" description="Η BioClean Pro παρέχει πιστοποιημένες υπηρεσίες απεντομώσεων και απολυμάνσεων εδώ και 15+ χρόνια. Γνωρίστε την ομάδα μας.">
+  <section class="section" style="background: linear-gradient(135deg, var(--color-bg), var(--color-surface-2))">
+    <div class="container" style="max-width: var(--content-default)">
+      <span class="section-label">Σχετικά με Εμάς</span>
+      <h1 style="font-size: var(--text-2xl); font-weight: 800; margin-bottom: var(--space-6)">Πάνω από 15 Χρόνια Εμπιστοσύνης</h1>
+      <p style="font-size: var(--text-lg); color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-6)">
+        Η BioClean Pro ιδρύθηκε με όραμα να αλλάξει τον τρόπο που αντιμετωπίζονται τα ζητήματα
+        υγιεινής χώρων. Πιστεύουμε ότι η απεντόμωση και η απολύμανση δεν πρέπει να είναι μια
+        ενοχλητική αναγκαιότητα, αλλά μια επιστημονική υπηρεσία που παρέχεται με σεβασμό
+        στον χώρο σας, στην υγεία σας και στο περιβάλλον.
+      </p>
+      <p style="color: var(--color-text-muted); line-height: 1.8; margin-bottom: var(--space-8)">
+        Με έδρα τον Πειραιά, εξυπηρετούμε κατοικίες, επιχειρήσεις εστίασης, ξενοδοχεία,
+        σχολεία, νοσοκομεία και δημόσιους οργανισμούς σε ολόκληρη τη Δυτική Αττική.
+        Η ομάδα μας αποτελείται από πιστοποιημένους τεχνικούς με συνεχή εκπαίδευση
+        στις τελευταίες εξελίξεις της εντομολογίας και των βιοκτόνων.
+      </p>
+    </div>
+  </section>
+
+  <section class="section-sm">
+    <div class="container">
+      <h2 class="section-title" style="text-align:center; margin-bottom: var(--space-10)">Οι Αξίες μας</h2>
+      <div class="grid-2" style="max-width: var(--content-wide); margin-inline: auto">
+        {values.map(v => (
+          <div class="card reveal">
+            <h3 style="font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-3)">{v.title}</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.7">{v.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sm" style="background: var(--color-surface-2)">
+    <div class="container" style="max-width: var(--content-default)">
+      <h2 class="section-title" style="text-align:center; margin-bottom: var(--space-10)">Πιστοποιήσεις & Εγγυήσεις</h2>
+      <div style="display: flex; flex-direction: column; gap: var(--space-4)">
+        {certifications.map(c => (
+          <div style="display: flex; align-items: flex-start; gap: var(--space-3); padding: var(--space-4); background: var(--color-surface); border-radius: var(--radius-lg); border: 1px solid var(--color-divider)">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--color-secondary)" stroke-width="2.5" stroke-linecap="round" style="flex-shrink:0; margin-top:2px"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+            <span style="font-weight: 500">{c}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

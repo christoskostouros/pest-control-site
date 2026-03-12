@@ -1,0 +1,144 @@
+---
+const year = new Date().getFullYear();
+---
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="/" class="logo" aria-label="BioClean Pro">
+          <svg width="36" height="36" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+            <rect width="40" height="40" rx="10" fill="var(--color-primary)"/>
+            <path d="M12 28V18c0-4.4 3.6-8 8-8s8 3.6 8 8v10" stroke="var(--color-text-inverse)" stroke-width="2.5" stroke-linecap="round"/>
+            <circle cx="20" cy="15" r="3" fill="var(--color-secondary)" opacity="0.9"/>
+            <path d="M15 24h10M15 28h10" stroke="var(--color-text-inverse)" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <span class="logo-text">BioClean<span style="color:var(--color-primary)">Pro</span></span>
+        </a>
+        <p class="footer-desc">
+          Πιστοποιημένες υπηρεσίες απεντομώσεων, απολυμάνσεων και βιολογικών καθαρισμών
+          με οικολογικά σκευάσματα νέας γενιάς.
+        </p>
+        <div class="footer-contact-info">
+          <a href="tel:+302101234567" class="footer-phone">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            210 123 4567
+          </a>
+          <a href="mailto:info@biocleanpro.gr" class="footer-email">info@biocleanpro.gr</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Υπηρεσίες</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="/ypiresies/apentomoseis/">Απεντομώσεις</a></li>
+          <li><a href="/ypiresies/apolymansis/">Απολυμάνσεις</a></li>
+          <li><a href="/ypiresies/myoktonies/">Μυοκτονίες</a></li>
+          <li><a href="/ypiresies/viologikoi-katharismoi/">Βιολογικοί Καθαρισμοί</a></li>
+          <li><a href="/ypiresies/katsarides/">Κατσαρίδες</a></li>
+          <li><a href="/ypiresies/korioi/">Κοριοί</a></li>
+          <li><a href="/ypiresies/pontikia/">Ποντίκια</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Περιοχές</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="/perioches/nikaia/">Νίκαια</a></li>
+          <li><a href="/perioches/peiraias/">Πειραιάς</a></li>
+          <li><a href="/perioches/korydallos/">Κορυδαλλός</a></li>
+          <li><a href="/perioches/keratsini/">Κερατσίνι</a></li>
+          <li><a href="/perioches/aigaleo/">Αιγάλεω</a></li>
+          <li><a href="/perioches/perama/">Πέραμα</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h3 class="footer-heading">Εταιρεία</h3>
+        <ul class="footer-links" role="list">
+          <li><a href="/about/">Σχετικά με εμάς</a></li>
+          <li><a href="/pelates/">Πελάτες</a></li>
+          <li><a href="/faq/">Συχνές Ερωτήσεις</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/epikoinonia/">Επικοινωνία</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {year} BioClean Pro. Με επιφύλαξη παντός δικαιώματος.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-divider);
+    padding-block: var(--space-16) var(--space-8);
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+  @media (min-width: 768px) {
+    .footer-grid { grid-template-columns: 1.5fr 1fr 1fr 1fr; }
+  }
+  .footer-brand { display: flex; flex-direction: column; gap: var(--space-4); }
+  .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    font-weight: 800;
+    font-size: var(--text-lg);
+    color: var(--color-text);
+  }
+  .footer-desc {
+    color: var(--color-text-muted);
+    font-size: var(--text-sm);
+    line-height: 1.7;
+  }
+  .footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .footer-phone, .footer-email {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+  .footer-phone:hover, .footer-email:hover { color: var(--color-primary-hover); }
+  .footer-heading {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-4);
+  }
+  .footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  .footer-links a {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    transition: color var(--transition-fast);
+  }
+  .footer-links a:hover { color: var(--color-primary); }
+  .footer-bottom {
+    margin-top: var(--space-12);
+    padding-top: var(--space-6);
+    border-top: 1px solid var(--color-divider);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer-bottom p {
+    font-size: var(--text-xs);
+    color: var(--color-text-faint);
+  }
+</style>

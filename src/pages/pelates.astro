@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const clients = [
+  { name: 'Εστιατόρια & Καφετέριες', desc: 'Τακτικά προγράμματα απεντόμωσης και απολύμανσης για χώρους εστίασης στον Πειραιά.' },
+  { name: 'Ξενοδοχεία & Airbnb', desc: 'Πρόληψη και αντιμετώπιση κοριών, απολύμανση δωματίων, βιολογικοί καθαρισμοί.' },
+  { name: 'Σούπερ Μάρκετ & Αποθήκες', desc: 'Ολοκληρωμένα προγράμματα IPM με μυοκτονία, απεντόμωση και monitoring.' },
+  { name: 'Πολυκατοικίες', desc: 'Κεντρικές απεντομώσεις κοινόχρηστων χώρων, υπογείων, αποχετεύσεων.' },
+  { name: 'Σχολεία & Παιδικοί Σταθμοί', desc: 'Ασφαλείς απολυμάνσεις με οικολογικά σκευάσματα, πιστοποιητικά εφαρμογής.' },
+  { name: 'Νοσοκομεία & Κλινικές', desc: 'Εξειδικευμένη απολύμανση χώρων υγείας σύμφωνα με τα πρωτόκολλα του ΕΟΔΥ.' },
+  { name: 'Γραφεία & Εταιρείες', desc: 'Απολύμανση χώρων εργασίας, βιολογικοί καθαρισμοί μοκετών.' },
+  { name: 'Ναυτιλιακές Εταιρείες', desc: 'Απεντόμωση και μυοκτονία σε πλοία, γραφεία ναυτιλιακών, αποθήκες λιμανιού.' },
+];
+---
+<BaseLayout title="Πελάτες" description="Η BioClean Pro εξυπηρετεί εστιατόρια, ξενοδοχεία, σούπερ μάρκετ, πολυκατοικίες, σχολεία και ναυτιλιακές εταιρείες.">
+  <section class="section" style="background: linear-gradient(135deg, var(--color-bg), var(--color-surface-2))">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: var(--space-12)">
+        <span class="section-label" style="justify-content: center">Πελάτες</span>
+        <h1 style="font-size: var(--text-2xl); font-weight: 800; margin-bottom: var(--space-4)">Μας Εμπιστεύονται</h1>
+        <p class="section-subtitle" style="margin-inline: auto">Εξυπηρετούμε ένα ευρύ φάσμα πελατών, από μεμονωμένες κατοικίες μέχρι μεγάλες επιχειρήσεις.</p>
+      </div>
+      <div class="grid-2" style="max-width: var(--content-wide); margin-inline: auto">
+        {clients.map(c => (
+          <div class="card reveal">
+            <h3 style="font-size: var(--text-lg); font-weight: 700; margin-bottom: var(--space-3); color: var(--color-primary)">{c.name}</h3>
+            <p style="color: var(--color-text-muted); line-height: 1.7">{c.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

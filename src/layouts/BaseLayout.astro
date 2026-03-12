@@ -1,0 +1,111 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+}
+
+const { title, description = 'Επαγγελματικές υπηρεσίες απεντομώσεων, απολυμάνσεων & βιολογικών καθαρισμών. Πιστοποιημένοι τεχνικοί, οικολογικά σκευάσματα, άμεση εξυπηρέτηση.', canonical, ogImage } = Astro.props;
+const siteTitle = `${title} | BioClean Pro`;
+---
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content={description} />
+  <title>{siteTitle}</title>
+  {canonical && <link rel="canonical" href={canonical} />}
+  <meta property="og:title" content={siteTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:type" content="website" />
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "PestControlService",
+    "name": "BioClean Pro",
+    "description": description,
+    "areaServed": ["Νίκαια", "Πειραιάς", "Κορυδαλλός", "Κερατσίνι", "Αιγάλεω"],
+    "telephone": "+302101234567",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Πειραιάς",
+      "addressRegion": "Αττική",
+      "addressCountry": "GR"
+    }
+  })} />
+</head>
+<body>
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    // Dark mode toggle
+    (function(){
+      const html = document.documentElement;
+      const toggleBtn = document.querySelector('[data-theme-toggle]');
+      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      html.setAttribute('data-theme', theme);
+
+      if (toggleBtn) {
+        updateToggleIcon(toggleBtn, theme);
+        toggleBtn.addEventListener('click', () => {
+          theme = theme === 'dark' ? 'light' : 'dark';
+          html.setAttribute('data-theme', theme);
+          updateToggleIcon(toggleBtn, theme);
+        });
+      }
+
+      function updateToggleIcon(btn, t) {
+        btn.setAttribute('aria-label', 'Εναλλαγή σε ' + (t === 'dark' ? 'φωτεινό' : 'σκοτεινό') + ' θέμα');
+        btn.innerHTML = t === 'dark'
+          ? '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+          : '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      }
+    })();
+
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Mobile menu
+    const menuToggle = document.querySelector('[data-menu-toggle]');
+    const mobileMenu = document.querySelector('[data-mobile-menu]');
+    if (menuToggle && mobileMenu) {
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('active');
+        menuToggle.setAttribute('aria-expanded', isOpen.toString());
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+      // Close on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
