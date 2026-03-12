@@ -1,8 +1,7 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://christoskostouros.github.io',
-  base: '/pest-control-site',
+  site: 'https://bioclean-pro.netlify.app',
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto'
