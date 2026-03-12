@@ -1,7 +1,8 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://christoskostouros.github.io',
+  base: '/pest-control-site',
   compressHTML: true,
   build: {
     inlineStylesheets: 'auto'
